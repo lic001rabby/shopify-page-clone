@@ -1,6 +1,8 @@
 <template>
   <div class="product-container">
-    <h1>This is an about page</h1>
+    <h1 class="text-2xl md:text-3xl md:leading-[42px] pr-2">
+      This is an about page
+    </h1>
   </div>
 </template>
 

@@ -1,14 +1,19 @@
 <template>
   <div class="product-container">
-    <h1 class="text-2xl md:text-3xl md:leading-[42px] pr-2">
-      This is an about page
-    </h1>
+    <ProductTitle>Test</ProductTitle>
+    <ProductDescription></ProductDescription>
+    <ExpansionPanel></ExpansionPanel>
+    <ExpansionPanel></ExpansionPanel>
   </div>
 </template>
 
 <script>
+import ProductTitle from "@/components/atoms/ProductTitle.vue";
+import ProductDescription from "@/components/atoms/ProductDescription.vue";
+import ExpansionPanel from "@/components/atoms/ExpansionPanel.vue";
 export default {
   name: "ProductView",
+  components: { ProductTitle, ProductDescription, ExpansionPanel },
   data() {
     return {
       productDetails: {

@@ -22,9 +22,28 @@
           <div
             class="flex flex-row justify-between border-y-2 border-lime py-5"
           >
-            <button class="text-bold">Find a Store</button>
-            <button class="text-bold">Lifetime Warranty</button>
-            <button class="text-bold">30 Day Return</button>
+            <button class="text-bold flex items-center">
+              <img
+                class="inline w-[30px] mr-2"
+                src="images/location.png"
+                alt=""
+              />
+              Find a Store
+            </button>
+            <button class="text-bold flex items-center mr-2">
+              <img
+                class="inline w-[30px] mr-2"
+                src="images/secure.png"
+                alt=""
+              />Lifetime Warranty
+            </button>
+            <button class="text-bold flex items-center">
+              <img
+                class="inline w-[30px] mr-2"
+                src="images/calendar.png"
+                alt=""
+              />30 Day Return
+            </button>
           </div>
           <ExpansionPanel title="Specs" :specs="product.specs"></ExpansionPanel>
           <ExpansionPanel

@@ -71,9 +71,6 @@ export default {
       border-color: #000 !important;
     }
 
-    .collapsible:hover {
-    }
-
     .collapsible:after {
       content: "\002B";
 

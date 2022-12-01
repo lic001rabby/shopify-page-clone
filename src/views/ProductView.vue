@@ -2,7 +2,9 @@
   <div class="product-container">
     <div class="container mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div id="product-photos"></div>
+        <div id="product-photos">
+          <ProductGallery :images="product.images"></ProductGallery>
+        </div>
         <div id="product-details">
           <ProductTitle class="mb-4">Test</ProductTitle>
           <ProductDescription
@@ -92,6 +94,7 @@ import ProductDescription from "@/components/atoms/ProductDescription.vue";
 import ExpansionPanel from "@/components/atoms/ExpansionPanel.vue";
 import ColorVarient from "@/components/atoms/ColorVarient.vue";
 import FaqSection from "@/components/FaqSection.vue";
+import ProductGallery from "@/components/ProductGallery.vue";
 export default {
   name: "ProductView",
   components: {
@@ -100,6 +103,7 @@ export default {
     ExpansionPanel,
     ColorVarient,
     FaqSection,
+    ProductGallery,
   },
   data() {
     return {

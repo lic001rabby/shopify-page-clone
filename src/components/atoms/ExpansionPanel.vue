@@ -3,18 +3,24 @@
     <div class="expansion-panel-title">
       <button
         @click="togglePanel()"
-        class="collapsible"
-        :class="{ active: open }"
+        class="collapsible text-xl font-bold border-b-2 border-lime"
+        :class="{ active: open, 'border-black': open }"
       >
         {{ title }}
       </button>
     </div>
     <div class="expansion-panel-content">
-      <div class="content" :class="{ active: open }">
-        <p>
-          {{ content }}
+      <div v-if="specs.length > 0" class="content" :class="{ active: open }">
+        <p v-for="(spec, index) in specs" :key="index">
+          <strong>{{ spec.spec }}: </strong>{{ spec.value }}
         </p>
       </div>
+      <div
+        v-else
+        class="content prose max-w-none"
+        :class="{ active: open }"
+        v-html="content"
+      ></div>
     </div>
   </div>
 </template>
@@ -31,6 +37,10 @@ export default {
     content: {
       type: String,
       default: "No description",
+    },
+    specs: {
+      type: Array,
+      default: () => [],
     },
   },
   data() {
@@ -50,25 +60,23 @@ export default {
 .expansion-panel {
   .expansion-panel-title {
     .collapsible {
-      background-color: #777;
-      color: white;
       cursor: pointer;
-      padding: 18px;
+      padding: 18px 0px;
       width: 100%;
-      border: none;
       text-align: left;
-      outline: none;
-      font-size: 15px;
+      transition: all 0.2s ease-out;
     }
 
-    .active,
+    .active {
+      border-color: #000 !important;
+    }
+
     .collapsible:hover {
-      background-color: #555;
     }
 
     .collapsible:after {
       content: "\002B";
-      color: white;
+
       font-weight: bold;
       float: right;
       margin-left: 5px;
@@ -86,10 +94,12 @@ export default {
       max-height: 0;
       overflow: hidden;
       transition: all 0.2s ease-out;
-      background-color: #f1f1f1;
+      strong {
+        color: #000;
+      }
     }
     .active {
-      padding: 20px 18px;
+      padding: 40px 18px;
       max-height: 200px;
     }
   }

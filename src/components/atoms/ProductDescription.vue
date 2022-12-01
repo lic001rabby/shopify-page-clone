@@ -1,6 +1,9 @@
 <template>
   <div class="product-description-container">
-    <div class="product-description" v-html="description"></div>
+    <div
+      class="product-description prose max-w-none"
+      v-html="description"
+    ></div>
   </div>
 </template>
 

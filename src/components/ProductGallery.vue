@@ -1,30 +1,8 @@
-<template>
-  <swiper
-    :modules="modules"
-    :slides-per-view="1"
-    :space-between="30"
-    navigation
-    :loop="true"
-    :pagination="{ clickable: true }"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide v-for="(image, index) in images" :key="index"
-      ><img :src="image.url" alt=""
-    /></swiper-slide>
-  </swiper>
-</template>
 <script>
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Thumbs } from "swiper";
-
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
+import Swiper, { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 export default {
   name: "ProductGallery",
@@ -34,30 +12,59 @@ export default {
       default: () => [],
     },
   },
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  data() {
-    return {
-      modules: [Navigation, Pagination, Scrollbar, A11y, Thumbs],
-    };
-  },
-  methods: {
-    onSwiper() {
-      console.log("onswiper");
-    },
-    onSlideChange() {
-      console.log("onSlideChange");
-    },
+  mounted() {
+    new Swiper(this.$refs.swiper, {
+      // configure Swiper to use modules
+      modules: [Navigation, Pagination],
+      // Optional parameters
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+    });
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.swiper {
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
+<template>
+  <!-- Slider main container -->
+  <div ref="swiper" class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide" v-for="(img, index) in images" :key="index">
+        <img :src="img.url" alt="" />
+      </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+</template>
+
+<style scoped>
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

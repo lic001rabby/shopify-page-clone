@@ -10,7 +10,6 @@
 
 <style lang="scss">
 #app {
-  padding: 100px 20px 0px 20px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

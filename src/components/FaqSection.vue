@@ -1,6 +1,11 @@
 <template>
   <div class="container mx-auto mt-12">
-    <h2 class="section-title mx-auto text-center">FAQ</h2>
+    <h3
+      style="font-weight: 600"
+      class="content__heading text-center text-2xl text-black lg:text-5xl sm:text-4xl"
+    >
+      FAQ
+    </h3>
 
     <ExpansionPanel
       v-for="(faq, index) in faqs"

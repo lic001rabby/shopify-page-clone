@@ -53,6 +53,9 @@
         </div>
       </div>
     </div>
+    <div id="review-slider">
+      <ReviewSlider :slides="reviewSlides"></ReviewSlider>
+    </div>
 
     <div id="faq">
       <FaqSection :faqs="product.faq"></FaqSection>
@@ -69,6 +72,7 @@ import AddToCart from "@/components/AddToCart.vue";
 import FaqSection from "@/components/FaqSection.vue";
 import ProductGallery from "@/components/ProductGallery.vue";
 import VariationSelector from "@/components/VariationSelector.vue";
+import ReviewSlider from "@/components/ReviewSlider.vue";
 export default {
   name: "ProductView",
   components: {
@@ -79,6 +83,7 @@ export default {
     FaqSection,
     ProductGallery,
     VariationSelector,
+    ReviewSlider,
   },
   data() {
     return {
@@ -183,6 +188,23 @@ export default {
           },
         ],
       },
+      reviewSlides: [
+        {
+          logo: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/blister_black_slider.png?v=1652335016",
+          content:
+            "If you’re looking for a technical carryall, be sure to check out the RUX system.",
+        },
+        {
+          logo: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/blister_black_slider.png?v=1652335016",
+          content:
+            "If you’re looking for a technical carryall, be sure to check out the RUX system.",
+        },
+        {
+          logo: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/blister_black_slider.png?v=1652335016",
+          content:
+            "If you’re looking for a technical carryall, be sure to check out the RUX system.",
+        },
+      ],
     };
   },
 };

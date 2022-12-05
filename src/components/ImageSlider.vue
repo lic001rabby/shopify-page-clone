@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery-container">
+  <div class="gallery-container w-full">
     <!-- Slider main container -->
     <div ref="slider" class="swiper gallery-main">
       <!-- Additional required wrapper -->

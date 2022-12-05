@@ -60,6 +60,9 @@
     <div id="image-slider">
       <ImageSlider :images="imageSlides"></ImageSlider>
     </div>
+    <div id="featured">
+      <CustomBlock :content="featuredBlock"></CustomBlock>
+    </div>
     <div id="faq">
       <FaqSection :faqs="product.faq"></FaqSection>
     </div>
@@ -77,6 +80,7 @@ import ProductGallery from "@/components/ProductGallery.vue";
 import VariationSelector from "@/components/VariationSelector.vue";
 import ReviewSlider from "@/components/ReviewSlider.vue";
 import ImageSlider from "@/components/ImageSlider.vue";
+import CustomBlock from "@/components/CustomBlock.vue";
 export default {
   name: "ProductView",
   components: {
@@ -89,6 +93,7 @@ export default {
     VariationSelector,
     ReviewSlider,
     ImageSlider,
+    CustomBlock,
   },
   data() {
     return {
@@ -220,6 +225,8 @@ export default {
           url: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/home-5_1512x.jpg",
         },
       ],
+      featuredBlock:
+        '<div class="text-center" style="--text-color: black;"><h3 style="font-weight: 600;" class="content__heading text-2xl text-black lg:text-5xl sm:text-4xl">Featured In</h3></div><div class="sf-custom__block-inner w-full"><div><div style="margin: auto;" data-image-id="29896732934382" class="sf-image " data-image-wrapper=""><img class="lazyautosizes lazyloaded" data-widths="[180,360,540,720,900,1080,1296,1512,1728,1920]" data-aspectratio="3.3275563258232235" data-sizes="auto" width="1920" height="577" alt="" data-image="" data-srcset="//cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_180x.jpg?v=1652589077 180w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_360x.jpg?v=1652589077 360w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_540x.jpg?v=1652589077 540w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_720x.jpg?v=1652589077 720w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_900x.jpg?v=1652589077 900w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1080x.jpg?v=1652589077 1080w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1296x.jpg?v=1652589077 1296w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1512x.jpg?v=1652589077 1512w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1728x.jpg?v=1652589077 1728w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1920x.jpg?v=1652589077 1920w" sizes="1110px" srcset="//cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_180x.jpg?v=1652589077 180w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_360x.jpg?v=1652589077 360w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_540x.jpg?v=1652589077 540w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_720x.jpg?v=1652589077 720w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_900x.jpg?v=1652589077 900w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1080x.jpg?v=1652589077 1080w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1296x.jpg?v=1652589077 1296w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1512x.jpg?v=1652589077 1512w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1728x.jpg?v=1652589077 1728w, //cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_1920x.jpg?v=1652589077 1920w"><noscript><img class="" src="//cdn.shopify.com/s/files/1/0313/2532/3401/files/media-logos-1920_2048x2048.jpg?v=1652589077" alt=""></noscript></div></div></div>',
     };
   },
 };

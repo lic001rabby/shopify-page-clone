@@ -1,5 +1,5 @@
 <template>
-  <div class="review-slider-conteiner max-w-[560px] mx-auto">
+  <div class="review-slider-conteiner max-w-[620px] mx-auto">
     <VueSlickCarousel :arrows="true">
       <div
         v-for="(slide, index) in slides"

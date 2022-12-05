@@ -57,6 +57,9 @@
       <ReviewSlider :slides="reviewSlides"></ReviewSlider>
     </div>
 
+    <div id="image-slider">
+      <ImageSlider :images="imageSlides"></ImageSlider>
+    </div>
     <div id="faq">
       <FaqSection :faqs="product.faq"></FaqSection>
     </div>
@@ -73,6 +76,7 @@ import FaqSection from "@/components/FaqSection.vue";
 import ProductGallery from "@/components/ProductGallery.vue";
 import VariationSelector from "@/components/VariationSelector.vue";
 import ReviewSlider from "@/components/ReviewSlider.vue";
+import ImageSlider from "@/components/ImageSlider.vue";
 export default {
   name: "ProductView",
   components: {
@@ -84,6 +88,7 @@ export default {
     ProductGallery,
     VariationSelector,
     ReviewSlider,
+    ImageSlider,
   },
   data() {
     return {
@@ -203,6 +208,16 @@ export default {
           logo: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/blister_black_slider.png?v=1652335016",
           content:
             "If you’re looking for a technical carryall, be sure to check out the RUX system.",
+        },
+      ],
+      imageSlides: [
+        {
+          alt: "Test",
+          url: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/home-6_1512x.jpg",
+        },
+        {
+          alt: "Test",
+          url: "https://cdn.shopify.com/s/files/1/0313/2532/3401/files/home-5_1512x.jpg",
         },
       ],
     };

@@ -66,6 +66,9 @@
           :content="topSection"
         ></CustomBlock>
       </div>
+      <div id="video-section">
+        <VideoSection></VideoSection>
+      </div>
       <div id="review-slider">
         <ReviewSlider :slides="reviewSlides"></ReviewSlider>
       </div>
@@ -76,10 +79,12 @@
       <div id="featured">
         <CustomBlock :content="featuredBlock"></CustomBlock>
       </div>
+      <div id="chart" class="px-12">
+        <ChartSection></ChartSection>
+      </div>
       <div id="faq" class="px-12">
         <FaqSection :faqs="product.faq"></FaqSection>
       </div>
-      <div id="test-component"></div>
     </div>
   </div>
 </template>
@@ -97,6 +102,8 @@ import ImageSlider from "@/components/ImageSlider.vue";
 import CustomBlock from "@/components/CustomBlock.vue";
 import AnnouncementBar from "@/components/AnnouncementBar.vue";
 import NavBar from "@/components/NavBar.vue";
+import VideoSection from "@/components/VideoSection.vue";
+import ChartSection from "@/components/ChartSection.vue";
 export default {
   name: "ProductView",
   components: {
@@ -112,6 +119,8 @@ export default {
     CustomBlock,
     AnnouncementBar,
     NavBar,
+    VideoSection,
+    ChartSection,
   },
   data() {
     return {

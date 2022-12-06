@@ -2428,7 +2428,7 @@ core-js-compat@^3.25.1, core-js-compat@^3.8.3:
   dependencies:
     browserslist "^4.21.4"
 
-core-js@^3.8.3:
+core-js@^3.10.0, core-js@^3.8.3:
   version "3.26.1"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.26.1.tgz#7a9816dabd9ee846c1c0fe0e8fcad68f3709134e"
   integrity sha512-21491RRQVzUn0GGM9Z1Jrpr6PNPxPi+Za8OM9q4tksTSnlbXXGKK1nXNg/QvwFYettXvSX6zWKCtHHfjN4puyA==
@@ -6108,6 +6108,14 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
+
+vue-lazytube@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-lazytube/-/vue-lazytube-1.1.1.tgz#669afc80cec53ab4899a4d9e70ac4d87f8b8f1c5"
+  integrity sha512-BvEFdFgCJ9i38VTgEyyj+NH5jqd/gJJ5HoZabXXni/OPoLJg1rrFXU7bHSXRNkFsmacTKD9ZhD6m/XR/c3Zg6Q==
+  dependencies:
+    core-js "^3.10.0"
+    whatwg-fetch "^3.6.2"
 
 vue-loader@^17.0.0:
   version "17.0.1"

@@ -10,14 +10,39 @@
       </div>
       <div class="flex-grow-[2] shrink flex justify-end items-center">
         <ul class="flex text-base font-medium whitespace-nowrap">
-          <li class="list-none mx-2">test</li>
-          <li class="list-none mx-2">test</li>
-          <li class="list-none mx-2">test</li>
+          <li
+            v-for="(item, index) in menu"
+            :key="index"
+            class="list-none mx-2 leading-[23px] text-l text-black uppercase font-medium"
+          >
+            <a :href="item.item_link">{{ item.item_name }}</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "NavBar",
+  props: {
+    menu: {
+      type: Array,
+      default: () => [
+        {
+          item_name: "Test",
+          item_link: "#",
+        },
+        {
+          item_name: "Test",
+          item_link: "#",
+        },
+      ],
+    },
+  },
+};
+</script>
 
 <style>
 .navbar {

@@ -61,7 +61,10 @@
         </div>
       </div>
       <div id="top-section">
-        <CustomBlock :content="topSection"></CustomBlock>
+        <CustomBlock
+          :background="'#f5f5ed'"
+          :content="topSection"
+        ></CustomBlock>
       </div>
       <div id="review-slider">
         <ReviewSlider :slides="reviewSlides"></ReviewSlider>

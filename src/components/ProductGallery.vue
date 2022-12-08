@@ -6,7 +6,7 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide" v-for="(img, index) in images" :key="index">
-          <img :src="img.url" alt="" />
+          <img :src="img" alt="" />
         </div>
       </div>
       <!-- If we need pagination -->
@@ -28,7 +28,7 @@
         <!-- Slides -->
         <div class="swiper-slide" v-for="(img, index) in images" :key="index">
           <div class="thumb-container">
-            <img :src="img.url" alt="" />
+            <img :src="img" alt="" />
           </div>
         </div>
       </div>

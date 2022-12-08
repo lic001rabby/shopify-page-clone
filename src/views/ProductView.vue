@@ -10,7 +10,7 @@
             <ProductGallery :images="shopifyProduct.images"></ProductGallery>
           </div>
           <div id="product-details" class="px-4">
-            <ProductTitle class="mb-4">Test</ProductTitle>
+            <ProductTitle class="mb-4">{{ shopifyProduct.title }}</ProductTitle>
             <ProductRating :rating="product.rating"></ProductRating>
             <ProductDescription
               class="mt-4"

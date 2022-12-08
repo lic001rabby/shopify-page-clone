@@ -9,15 +9,9 @@
           <img :src="img" alt="" />
         </div>
       </div>
-      <!-- If we need pagination -->
-      <!-- <div class="swiper-pagination"></div> -->
 
-      <!-- If we need navigation buttons -->
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
     </div>
     <div
       ref="swiperThumbs"
@@ -26,7 +20,12 @@
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide" v-for="(img, index) in images" :key="index">
+        <div
+          class="swiper-slide"
+          v-for="(img, index) in images"
+          :key="index"
+          @click="thumbClicked(index)"
+        >
           <div class="thumb-container">
             <img :src="img" alt="" />
           </div>
@@ -57,21 +56,21 @@ export default {
       galleryMain: null,
     };
   },
+  methods: {
+    thumbClicked(index) {
+      this.galleryMain.slideTo(index);
+    },
+  },
   mounted() {
     this.galleryThumbs = new Swiper(this.$refs.swiperThumbs, {
       // configure Swiper to use modules
       modules: [Thumbs],
       // Optional parameters
-      centeredSlides: true,
-      centeredSlidesBounds: true,
-      slidesPerView: 5,
+      slidesPerView: 6,
       watchOverflow: true,
       watchSlidesVisibility: true,
       watchSlidesProgress: true,
-      loop: true,
-
       direction: "vertical",
-
       thumbs: {
         el: ".swiper-thumbs",
       },
@@ -80,12 +79,6 @@ export default {
       // configure Swiper to use modules
       modules: [Navigation, Pagination],
       // Optional parameters
-      loop: true,
-
-      // If we need pagination
-      pagination: {
-        el: ".swiper-pagination",
-      },
 
       // Navigation arrows
       navigation: {
@@ -95,12 +88,8 @@ export default {
       thumbs: {
         swiper: this.galleryThumbs,
       },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
     });
+
     this.galleryMain.on("slideChangeTransitionStart", () => {
       this.galleryThumbs.slideTo(this.galleryMain.activeIndex);
     });
@@ -125,12 +114,12 @@ export default {
   overflow: hidden;
 }
 .gallery-main {
-  width: 90%;
+  width: 85%;
   height: auto;
 }
 .gallery-thumbs {
   order: -1;
-  width: 10%;
+  width: 15%;
   height: 500px;
   margin-right: 15px;
   padding-left: 15px;

@@ -4,7 +4,7 @@
     <NavBar></NavBar>
 
     <div class="product-container container mx-auto">
-      <div class="container mx-auto px-16">
+      <div class="container mx-auto px-4 lg:px-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div id="product-photos">
             <ProductGallery :images="shopifyProduct.images"></ProductGallery>

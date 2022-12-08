@@ -1,6 +1,6 @@
 <template>
   <div class="navbar container mx-auto px-8">
-    <div class="flex -mx-4 items-center">
+    <div class="flex items-center">
       <div class="px-4 flex-1 justify-start has-logo-img">
         <img
           class="inline-block logo-img"

@@ -4,14 +4,16 @@
     <NavBar></NavBar>
 
     <div class="product-container container mx-auto">
-      <div class="container mx-auto px-8">
+      <div class="container mx-auto px-16">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div id="product-photos">
             <ProductGallery :images="shopifyProduct.images"></ProductGallery>
           </div>
-          <div id="product-details">
+          <div id="product-details" class="px-4">
             <ProductTitle class="mb-4">Test</ProductTitle>
+            <ProductRating :rating="product.rating"></ProductRating>
             <ProductDescription
+              class="mt-4"
               :description="product.description"
             ></ProductDescription>
             <span class="product-price text-2xl block mt-4 mb-4 text-black"
@@ -113,6 +115,7 @@ import AnnouncementBar from "@/components/AnnouncementBar.vue";
 import NavBar from "@/components/NavBar.vue";
 import VideoSection from "@/components/VideoSection.vue";
 import ChartSection from "@/components/ChartSection.vue";
+import ProductRating from "@/components/ProductRating.vue";
 export default {
   name: "ProductView",
   components: {
@@ -130,6 +133,7 @@ export default {
     NavBar,
     VideoSection,
     ChartSection,
+    ProductRating,
   },
   data() {
     return {
@@ -161,7 +165,7 @@ export default {
         ],
         rating: {
           count: 105,
-          score: 5,
+          score: 4.2,
         },
         description:
           "<p>RUX is the new all-in-one system to pack, move, and use your valuable gear. Garage to the beach. Truck to the trailhead. Ready when you need it.</p><ul><li>Fully collapsible design</li><li>Multiple carry configurations<br></li><li>Waterproof materials</li><li>Easy access tri-fold lid</li><li>Lifetime Warranty!&nbsp;</li></ul>",

@@ -17,7 +17,9 @@
             <span class="product-price text-2xl block mt-4 mb-4 text-black"
               >{{ currency }}{{ product.pricing.regularPrice.toFixed(2) }}</span
             >
-            <VariationSelector></VariationSelector>
+            <VariationSelector
+              :variations="product.variations.colors"
+            ></VariationSelector>
             <span class="font-bold block my-4"
               >Order before 5pm PST & we’ll ship the next day.</span
             >

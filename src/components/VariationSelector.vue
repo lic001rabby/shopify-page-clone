@@ -1,7 +1,12 @@
 <template>
   <div class="my-4 color-variations inline-flex flex-wrap">
-    <ColorVarient class="mr-2"></ColorVarient>
-    <ColorVarient class="mr-2"></ColorVarient>
+    <ColorVarient
+      v-for="(item, index) in variations"
+      :key="index"
+      class="mr-2"
+      :name="item.colorName"
+      :color="item.colorCode"
+    ></ColorVarient>
   </div>
 </template>
 
